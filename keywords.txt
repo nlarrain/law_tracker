@@ -1,0 +1,4 @@
+consumidor
+retail
+tarjeta
+consumo
