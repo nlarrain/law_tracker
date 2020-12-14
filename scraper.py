@@ -9,6 +9,12 @@ import pandas as pd
 from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
+import pandas as pd
+import sys
+sys.path.insert(1, '/Users/nico/Spyder/functions')
+import sqlite_functions as sq
+import timing as timing 
+
 
 # Read list of keywords
 words = []
@@ -66,7 +72,6 @@ def get_projects (keyword):
         
         project.append(info)
 
-
     df = pd.DataFrame(project, columns = ['fecha', 'boletin', 'titulo' , 'status','fecha_sort', 'boletin'])
 
     #Delete the first row and trim the strings
@@ -82,4 +87,6 @@ for word in words:
     aux = get_projects(word)
     final.append(aux)
 
-
+# Concatenate the resuls and write it to a csv
+df = pd.concat(final)
+df.to_csv('results.csv', index = False)
