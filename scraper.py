@@ -10,11 +10,6 @@ from datetime import datetime
 import requests
 from bs4 import BeautifulSoup
 import pandas as pd
-import sys
-sys.path.insert(1, '/Users/nico/Spyder/functions')
-import sqlite_functions as sq
-import timing as timing 
-
 
 # Read list of keywords
 words = []
